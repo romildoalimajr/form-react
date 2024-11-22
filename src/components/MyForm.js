@@ -11,6 +11,7 @@ function MyForm() {
     };
 
     console.log(name);
+    console.log(email);
 
     return (
         <div>
@@ -18,12 +19,22 @@ function MyForm() {
             <form>
                 <div>
                     <label htmlFor="name">Nome.:</label>
-                    <input type="text" name='name' placeholder='Digite o seu nome' onChange={handleName} />
+                    <input
+                        type="text"
+                        name='name'
+                        placeholder='Digite o seu nome'
+                        onChange={handleName}
+                    />
                 </div>
                 {/** 2 label envolvendo o input */}
                 <label htmlFor="">
                     <span>Email.?: </span>
-                    <input type="email" name="email" id="email" placeholder='Digite o seu e-mail' />
+                    <input type="email"
+                        name="email"
+                        id="email"
+                        placeholder='Digite o seu e-mail'
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </label>
                 <div>
                     <input type="submit" value="Enviar" />
