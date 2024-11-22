@@ -10,13 +10,20 @@ function MyForm() {
         setName(e.target.value);
     };
 
-    console.log(name);
-    console.log(email);
+    // console.log(name);
+    // console.log(email);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("Enviando o formulário");
+        console.log(name, email);
+    }
 
     return (
         <div>
+            {/** 5 - envio de formulário */}
             {/** 1 criação de form */}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nome.:</label>
                     <input
@@ -28,6 +35,7 @@ function MyForm() {
                 </div>
                 {/** 2 label envolvendo o input */}
                 <label htmlFor="">
+                    {/** 4 simplicaficação */}
                     <span>Email.?: </span>
                     <input type="email"
                         name="email"
