@@ -18,6 +18,11 @@ const MyForm = ({ user }) => {
         event.preventDefault();
         console.log("Enviando o formulário");
         console.log(name, email);
+
+        {/** 7 limpando formulario */}
+
+        setName("");
+        setEmail('');
     }
 
     return (
